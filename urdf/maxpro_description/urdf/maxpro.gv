@@ -1,0 +1,56 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"base_inertia" [label="base_inertia"];
+"fr_abad" [label="fr_abad"];
+"fr_thigh" [label="fr_thigh"];
+"fr_calf" [label="fr_calf"];
+"fr_foot" [label="fr_foot"];
+"fl_abad" [label="fl_abad"];
+"fl_thigh" [label="fl_thigh"];
+"fl_calf" [label="fl_calf"];
+"fl_foot" [label="fl_foot"];
+"hr_abad" [label="hr_abad"];
+"hr_thigh" [label="hr_thigh"];
+"hr_calf" [label="hr_calf"];
+"hr_foot" [label="hr_foot"];
+"hl_abad" [label="hl_abad"];
+"hl_thigh" [label="hl_thigh"];
+"hl_calf" [label="hl_calf"];
+"hl_foot" [label="hl_foot"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_inertia_to_base" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_inertia_to_base" -> "base_inertia"
+"base_link" -> "leg0_fr_joint0" [label="xyz: 0.37525 -0.0775 0 \nrpy: 0 -0 0"]
+"leg0_fr_joint0" -> "fr_abad"
+"fr_abad" -> "leg0_fr_joint1" [label="xyz: 0 -0.154 0 \nrpy: 0 -0 0"]
+"leg0_fr_joint1" -> "fr_thigh"
+"fr_thigh" -> "leg0_fr_joint2" [label="xyz: 3e-05 0 -0.35 \nrpy: 0 -0 0"]
+"leg0_fr_joint2" -> "fr_calf"
+"fr_calf" -> "fr_fix_joint" [label="xyz: -0 0 -0.415 \nrpy: 0 -0 0"]
+"fr_fix_joint" -> "fr_foot"
+"base_link" -> "leg1_fl_joint0" [label="xyz: 0.37525 0.0775 0 \nrpy: 0 -0 0"]
+"leg1_fl_joint0" -> "fl_abad"
+"fl_abad" -> "leg1_fl_joint1" [label="xyz: 0 0.154 0 \nrpy: 0 -0 0"]
+"leg1_fl_joint1" -> "fl_thigh"
+"fl_thigh" -> "leg1_fl_joint2" [label="xyz: 3e-05 0 -0.35 \nrpy: 0 -0 0"]
+"leg1_fl_joint2" -> "fl_calf"
+"fl_calf" -> "fl_fix_joint" [label="xyz: -0 0 -0.415 \nrpy: 0 -0 0"]
+"fl_fix_joint" -> "fl_foot"
+"base_link" -> "leg2_hr_joint0" [label="xyz: -0.37525 -0.0775 -0 \nrpy: 0 -0 0"]
+"leg2_hr_joint0" -> "hr_abad"
+"hr_abad" -> "leg2_hr_joint1" [label="xyz: 0 -0.154 0 \nrpy: 0 -0 0"]
+"leg2_hr_joint1" -> "hr_thigh"
+"hr_thigh" -> "leg2_hr_joint2" [label="xyz: 3e-05 0 -0.35 \nrpy: 0 -0 0"]
+"leg2_hr_joint2" -> "hr_calf"
+"hr_calf" -> "hr_fix_joint" [label="xyz: -0 0 -0.415 \nrpy: 0 -0 0"]
+"hr_fix_joint" -> "hr_foot"
+"base_link" -> "leg3_hl_joint0" [label="xyz: -0.37525 0.0775 -0 \nrpy: 0 -0 0"]
+"leg3_hl_joint0" -> "hl_abad"
+"hl_abad" -> "leg3_hl_joint1" [label="xyz: 0 0.154 0 \nrpy: 0 -0 0"]
+"leg3_hl_joint1" -> "hl_thigh"
+"hl_thigh" -> "leg3_hl_joint2" [label="xyz: 3e-05 0 -0.35 \nrpy: 0 -0 0"]
+"leg3_hl_joint2" -> "hl_calf"
+"hl_calf" -> "hl_fix_joint" [label="xyz: -0 0 -0.415 \nrpy: 0 -0 0"]
+"hl_fix_joint" -> "hl_foot"
+}

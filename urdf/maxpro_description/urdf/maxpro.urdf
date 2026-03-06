@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="maxpro">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/base_link.STL"/>
+      </geometry>
+      <material name="base_color">
+        <color rgba="0.79216 0.81961 0.93333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_inertia_to_base" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_inertia"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <link name="base_inertia">
+    <inertial>
+      <origin xyz="0.000279 0.004196 -0.007079" rpy="0 0 0"/>
+      <mass value="35.408"/>
+      <inertia
+        ixx="0.531253438"
+        ixy="0.000686473"
+        ixz="-0.000221454"
+        iyy="1.461631061"
+        iyz="-0.00009271"
+        izz="1.739434066"/>
+    </inertial>
+  </link>
+
+  <joint name="leg0_fr_joint0" type="revolute">
+    <origin xyz="0.37525 -0.0775 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="fr_abad"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.7854"  upper="0.7854" effort="100"  velocity="9.21"/>
+  </joint>
+
+  <link name="fr_abad">
+    <inertial>
+      <origin xyz="-0.008515 -0.003632 -0.001365" rpy="0 0 0"/>
+      <mass value="3.083"/>
+      <inertia ixx="0.006713642" ixy="0.00011035" ixz="-0.000034167" iyy="0.011393954" iyz="0.000116757" izz="0.008184764"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fr_abad.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fr_abad.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="leg0_fr_joint1"  type="revolute">
+    <origin xyz="0 -0.154 0" rpy="0 0 0"/>
+    <parent link="fr_abad"/>
+    <child  link="fr_thigh"/>
+    <axis  xyz="0 -1 0"/>
+    <limit lower="-3.1765" upper="0" effort="120" velocity="14.4"/>
+  </joint>
+
+  <link name="fr_thigh">
+    <inertial>
+      <origin xyz="-0.006078 0.024962 -0.050017" rpy="0 0 0"/>
+      <mass value="4.359"/>
+      <inertia
+        ixx="0.058191044"
+        ixy="0.000607622"
+        ixz="0.003215132"
+        iyy="0.057857634"
+        iyz="0.00485072"
+        izz="0.012442736"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fr_thigh.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fr_thigh.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="leg0_fr_joint2" type="revolute">
+    <origin xyz="0.00003 0 -0.35"  rpy="0 0 0"/>
+    <parent link="fr_thigh"/>
+    <child link="fr_calf"/>
+    <axis xyz="0 -1 0"/>
+    <limit  lower="0.52"  upper="2.765"  effort="180" velocity="10.94"/>
+  </joint>
+
+  <link name="fr_calf">
+    <inertial>
+      <origin xyz="0.011366 0.000093 -0.182355" rpy="0 0 0"/>
+      <mass value="0.677"/>
+      <inertia
+        ixx="0.018845022"
+        ixy="-0.000000301"
+        ixz="-0.000254441"
+        iyy="0.019111808"
+        iyz="0.000014141"
+        izz="0.000388021"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fr_calf.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fr_calf.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  
+  <joint name="fr_fix_joint" type="fixed">
+      <parent link="fr_calf"/>
+      <child link="fr_foot"/>
+      <origin rpy="0 0 0" xyz="-0.0 0 -0.415"/>  
+      <!-- -0.0 0 -0.428 -->
+  </joint>
+
+  <!-- Foot link -->
+  <link name="fr_foot">
+      <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
+            <mass value="0.001"/>
+            <inertia ixx="1e-8" ixy="0" ixz="0" iyy="1e-8" iyz="0" izz="1e-8"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+          <geometry>
+               <sphere radius="0.0001"/>
+          </geometry>
+      </visual>
+      <collision>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="0.0001"/>
+            </geometry>
+      </collision>
+  </link>
+
+  <joint
+    name="leg1_fl_joint0"
+    type="revolute">
+    <origin xyz="0.37525 0.0775 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child
+      link="fl_abad"/>
+    <axis
+      xyz="1 0 0"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="9.21"/>
+  </joint>
+
+  <link name="fl_abad">
+    <inertial>
+      <origin xyz="-0.008515 0.003632 -0.001365" rpy="0 0 0"/>
+      <mass value="3.083"/>
+      <inertia ixx="0.006713642" ixy="-0.00011035" ixz="-0.000034167" iyy="0.011393954" iyz="-0.000116757" izz="0.008184764"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fl_abad.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fl_abad.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+<joint name="leg1_fl_joint1" type="revolute">
+    <origin xyz="0 0.154 0" rpy="0 0 0"/>
+    <parent link="fl_abad"/>
+    <child link="fl_thigh"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-3.1765" upper="0" effort="120" velocity="14.4"/>
+  </joint>
+  
+  <link name="fl_thigh">
+    <inertial>
+      <origin xyz="-0.006078 -0.024962 -0.050017" rpy="0 0 0"/>
+      <mass value="4.359"/>
+      <inertia
+        ixx="0.058191044"
+        ixy="-0.000607622"
+        ixz="0.003215132"
+        iyy="0.057857634"
+        iyz="-0.00485072"
+        izz="0.012442736"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fl_thigh.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fl_thigh.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="leg1_fl_joint2" type="revolute">
+    <origin xyz="0.00003 0 -0.35" rpy="0 0 0"/>
+    <parent link="fl_thigh"/>
+    <child link="fl_calf"/>
+    <axis xyz="0 -1 0"/>
+    <limit  lower="0.52"  upper="2.765"  effort="180" velocity="10.94"/>
+  </joint>
+
+  <link name="fl_calf">
+    <inertial>
+      <origin
+        xyz="0.011366 -0.000093 -0.182355"
+        rpy="0 0 0"/>
+      <mass value="0.677"/>
+      <inertia
+        ixx="0.018845022"
+        ixy="0.000000301"
+        ixz="-0.000254441"
+        iyy="0.019111808"
+        iyz="-0.000014141"
+        izz="0.000388021"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fl_calf.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/fl_calf.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="fl_fix_joint" type="fixed">
+      <parent link="fl_calf"/>
+      <child link="fl_foot"/>
+      <origin rpy="0 0 0" xyz="-0.0 0 -0.415"/>
+  </joint>
+
+  <!-- Foot link -->
+  <link name="fl_foot">
+      <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
+            <mass value="0.001"/>
+            <inertia ixx="1e-8" ixy="0" ixz="0" iyy="1e-8" iyz="0" izz="1e-8"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+          <geometry>
+               <sphere radius="0.0001"/>
+          </geometry>
+      </visual>
+      <collision>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="0.0001"/>
+            </geometry>
+      </collision>
+  </link>
+
+  <joint name="leg2_hr_joint0" type="revolute">
+    <origin xyz="-0.37525 -0.0775 -0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hr_abad"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="9.21"/>
+  </joint>
+
+  <link name="hr_abad">
+    <inertial>
+      <origin xyz="0.008515 -0.003632 -0.001365" rpy="0 0 0"/>
+      <mass value="3.083"/>
+      <inertia ixx="0.006713642" ixy="-0.00011035" ixz="0.000034167" iyy="0.011393954" iyz="0.000116757" izz="0.008184764"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hr_abad.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hr_abad.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="leg2_hr_joint1" type="revolute">
+    <origin xyz="0 -0.154 0" rpy="0 0 0"/>
+    <parent link="hr_abad"/>
+    <child link="hr_thigh"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-3.1765" upper="0" effort="120" velocity="14.4"/>
+  </joint>
+
+  <link
+    name="hr_thigh">
+    <inertial>
+      <origin xyz="-0.006078 0.024962 -0.050017" rpy="0 0 0"/>
+      <mass value="4.359"/>
+      <inertia
+        ixx="0.058191044"
+        ixy="0.000607622"
+        ixz="0.003215132"
+        iyy="0.057857634"
+        iyz="0.00485072"
+        izz="0.012442736"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hr_thigh.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hr_thigh.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="leg2_hr_joint2" type="revolute">
+    <origin xyz="0.00003 0 -0.35" rpy="0 0 0"/>
+    <parent link="hr_thigh"/>
+    <child link="hr_calf"/>
+    <axis xyz="0 -1 0"/>
+    <limit  lower="0.52"  upper="2.765"  effort="180" velocity="10.94"/>
+  </joint>
+
+  <link name="hr_calf">
+    <inertial> 
+      <origin xyz="0.011366 0.000093 -0.182355" rpy="0 0 0"/>
+      <mass value="0.677"/>
+      <inertia
+        ixx="0.018845022"
+        ixy="-0.000000301"
+        ixz="-0.000254441"
+        iyy="0.019111808"
+        iyz="0.000014141"
+        izz="0.000388021"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hr_calf.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hr_calf.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+
+  <joint name="hr_fix_joint" type="fixed">
+      <parent link="hr_calf"/>
+      <child link="hr_foot"/>
+      <origin rpy="0 0 0" xyz="-0.0 0 -0.415"/>
+  </joint>
+
+  <!-- Foot link -->
+  <link name="hr_foot">
+      <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
+            <mass value="0.001"/>
+            <inertia ixx="1e-8" ixy="0" ixz="0" iyy="1e-8" iyz="0" izz="1e-8"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+          <geometry>
+               <sphere radius="0.0001"/>
+          </geometry>
+      </visual>
+      <collision>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="0.0001"/>
+            </geometry>
+      </collision>
+  </link>
+
+  <joint name="leg3_hl_joint0" type="revolute">
+    <origin xyz="-0.37525 0.0775 -0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hl_abad"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="9.21"/>
+  </joint>
+
+  <link name="hl_abad">
+    <inertial>
+      <origin xyz="0.008515 0.003632 -0.001365" rpy="0 0 0"/>
+      <mass value="3.083"/>
+      <inertia ixx="0.006713642" ixy="0.00011035" ixz="0.000034167" iyy="0.011393954" iyz="-0.000116757" izz="0.008184764"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hl_abad.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hl_abad.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="leg3_hl_joint1" type="revolute">
+    <origin xyz="0 0.154 0" rpy="0 0 0"/>
+    <parent link="hl_abad"/>
+    <child link="hl_thigh"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-3.1765" upper="0" effort="120" velocity="14.4"/>
+  </joint>
+
+  <link
+    name="hl_thigh">
+    <inertial>
+      <origin xyz="-0.006078 -0.024962 -0.050017" rpy="0 0 0"/>
+      <mass value="4.359"/>
+      <inertia
+        ixx="0.058191044"
+        ixy="-0.000607622"
+        ixz="0.003215132"
+        iyy="0.057857634"
+        iyz="-0.00485072"
+        izz="0.012442736"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hl_thigh.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hl_thigh.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="leg3_hl_joint2" type="revolute">
+    <origin xyz="0.00003 0 -0.35" rpy="0 0 0"/>
+    <parent link="hl_thigh"/>
+    <child link="hl_calf"/>
+    <axis xyz="0 -1 0"/>
+    <limit  lower="0.52"  upper="2.765"  effort="180" velocity="10.94"/>
+  </joint>
+
+  <link name="hl_calf">
+    <inertial>
+      <origin
+        xyz="0.011366 -0.000093 -0.182355"
+        rpy="0 0 0"/>
+      <mass value="0.677"/>
+      <inertia
+        ixx="0.018845022"
+        ixy="0.000000301"
+        ixz="-0.000254441"
+        iyy="0.019111808"
+        iyz="-0.000014141"
+        izz="0.000388021"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hl_calf.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://maxpro_description/meshes/hl_calf.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="hl_fix_joint" type="fixed">
+      <parent link="hl_calf"/>
+      <child link="hl_foot"/>
+      <origin rpy="0 0 0" xyz="-0.0 0 -0.415"/>
+  </joint>
+
+  <!-- Foot link -->
+  <link name="hl_foot">
+      <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
+            <mass value="0.001"/>
+            <inertia ixx="1e-8" ixy="0" ixz="0" iyy="1e-8" iyz="0" izz="1e-8"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+          <geometry>
+               <sphere radius="0.0001"/>
+          </geometry>
+      </visual>
+      <collision>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="0.0001"/>
+            </geometry>
+      </collision>
+  </link>
+  
+</robot>
