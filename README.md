@@ -81,6 +81,7 @@ cd build
 
 # sdk更新记录
 | 修订日期 | 修订内容 | sdk版本 |
+| ------- | ------- | ------ |
 | 2025-12-25 | - 优化自主对桩成功率<br>增加SDK匍匐接口调用 SwitchToCrawlMode(val) | V2.0.5 |
 |2026--1-16 | 新增部分接口：<br>- sdk中新增异常状态接口GetAllAlerts()<br>- sdk中新增里程计接口GetOdometry()<br>- sdk中新增充电检测接口GetRobotChargingState()<br>- sdk中新增获取关节角度\角速度接口GetJointState()<br>- sdk中新增IMU加速度接口GetImuLinearAcceleration() | V2.0.6 |
 | 2026-01-24 | - 修复系统崩溃的内核驱动bug<br>- 内核错误向上反馈至应用层<br>- 运控增加接收内核错误自动趴下和红灯提示<br>- autoboot更新修改BAT超时为2s和修改GPS上报频次为2s<br>- 修复SDK控制权已释放给遥控器，遥控器按B后，狗还能继续执行SDK指令的问题 | V2.0.7 |
