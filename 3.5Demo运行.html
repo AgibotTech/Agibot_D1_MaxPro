@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.5 Demo运行 &mdash; D1_Max_Pro V2.0.7 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/hide_top_select.css?v=d3441683" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2cef09d5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="四、API函数介绍" href="%E5%9B%9B%E3%80%81API%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D.html" />
+    <link rel="prev" title="3.4 SDK获取" href="3.4SDK%E8%8E%B7%E5%8F%96.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            D1_Max_Pro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E4%B8%80%E3%80%81%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D.html">一、产品介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BA%8C%E3%80%81%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84.html">二、系统架构</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="%E4%B8%89%E3%80%81SDK%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.html">三、SDK开发指南</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="3.1SDK%E4%BB%8B%E7%BB%8D.html">3.1 SDK介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.2%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96.html">3.2 环境依赖</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3%E8%AE%BE%E5%A4%87%E7%99%BB%E5%BD%95.html">3.3 设备登录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.4SDK%E8%8E%B7%E5%8F%96.html">3.4 SDK获取</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.5 Demo运行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sdk">3.5.1 高层sdk安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.5.2 底层sdk安装</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%9B%9B%E3%80%81API%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D.html">四、API函数介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BA%94%E3%80%81%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97.html">五、调试指南</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">D1_Max_Pro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="%E4%B8%89%E3%80%81SDK%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.html">三、SDK开发指南</a></li>
+      <li class="breadcrumb-item active">3.5 Demo运行</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="demo">
+<h1>3.5 Demo运行<a class="headerlink" href="#demo" title="Link to this heading"></a></h1>
+<section id="sdk">
+<h2>3.5.1 高层sdk安装<a class="headerlink" href="#sdk" title="Link to this heading"></a></h2>
+<p>会根据用户开发环境是否安装ros1系统给到不同的sdk文件<br>
+安装ros1系统的sdk文件解压出来目录如下：</p>
+<p><img alt="图片" src="_images/SDK_Catalog_with_ROS1.png" /></p>
+<p>执行下面指令，编译成功后即可运行提供的demo程序<code class="docutils literal notranslate"><span class="pre">high_level_demo.cpp</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j6</span>
+<span class="n">LD_LIBRARY_PATH</span><span class="o">=../</span><span class="n">high_level_remote_tcp_client_test</span>
+<span class="o">./</span><span class="n">high_level_demo</span>
+</pre></div>
+</div>
+<p>未安装ros1系统的zip文件解压出来目录如下：</p>
+<p><img alt="图片" src="_images/SDK_Catalog_without_ROS1.png" /></p>
+<p>执行build.sh指令然后就可以运行提供的demo程序<code class="docutils literal notranslate"><span class="pre">high_level_remote_tcp_client_test.cpp</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">cd</span> <span class="n">build</span><span class="o">/</span>
+<span class="n">LD_LIBRARY_PATH</span><span class="o">=../</span><span class="n">high_level_remote_tcp_client_test</span>
+<span class="o">./</span><span class="n">high_level_remote_tcp_client_test</span>
+</pre></div>
+</div>
+<p><strong>注：在进行sdk控制时，需要在遥控器端打开sdk控制</strong></p>
+</section>
+<section id="id1">
+<h2>3.5.2 底层sdk安装<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>和高层sdk不同的是，底层sdk不依赖动态库开发，用户只需要编写自己的程序，订阅<code class="docutils literal notranslate"><span class="pre">rt/lowstate</span></code>和发布<code class="docutils literal notranslate"><span class="pre">rt/lowcmd</span></code>这两个话题就可以获取关节信息和控制关节电机</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="3.4SDK%E8%8E%B7%E5%8F%96.html" class="btn btn-neutral float-left" title="3.4 SDK获取" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="%E5%9B%9B%E3%80%81API%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D.html" class="btn btn-neutral float-right" title="四、API函数介绍" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2026, Agibot。</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
